@@ -20,3 +20,17 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 require_once plugin_dir_path( __FILE__ ) . 'service-block/service-block.php';
 require_once plugin_dir_path( __FILE__ ) . 'slider-block/slider-block.php';
+
+
+// Back-end
+function cgb_editor_init(){
+    wp_register_style('cgb-editor-style', plugin_dir_url(__FILE__).'editor.css', array( 'wp-edit-blocks' ));
+}
+add_action( 'init', 'cgb_editor_init' );
+
+
+// Front-end
+function cgb_style_scripts() {
+    wp_enqueue_style('cgb-style', plugin_dir_url(__FILE__).'style.css');
+}
+add_action( 'wp_enqueue_scripts', 'cgb_style_scripts' );

@@ -22,12 +22,6 @@ function create_block_slider_block_block_init() {
 		filemtime( plugin_dir_path( __DIR__ ) . '/slider-block/build/index.js' ),
 		true
 	);
-	wp_register_style(
-		'cgb-editor-style',
-		plugins_url( '/slider-block/src/editor.css', dirname( __FILE__ ) ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __DIR__ ) . '/slider-block/src/editor.css' )
-	);
 
 	// Front-end
 	wp_register_script(
@@ -43,12 +37,6 @@ function create_block_slider_block_block_init() {
 		array( 'wp-blocks', 'wp-element', 'wp-i18n', 'jquery', 'cgb-swiper-lib-script' ),
 		filemtime( plugin_dir_path( __DIR__ ) . '/slider-block/src/swiper-slider/swiper-init.js' ),
 		true
-	);
-	wp_register_style(
-		'cgb-style',
-		plugins_url( '/slider-block/src/style.css', dirname( __FILE__ ) ),
-		is_admin() ? array( 'wp-editor' ) : null,
-		filemtime( plugin_dir_path( __DIR__ ) . '/slider-block/src/style.css' )
 	);
 	wp_register_style(
 		'cgb-swiper-style',

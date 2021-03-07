@@ -12,7 +12,7 @@
  */
 
 
-function create_block_service_block_block_init() {
+function create_block_service_block_init() {
 
 	// Back-end
 	wp_register_script(
@@ -22,28 +22,14 @@ function create_block_service_block_block_init() {
 		filemtime( plugin_dir_path( __DIR__ ) . '/service-block/build/index.js' ),
 		true
 	);
-	wp_register_style(
-		'cgb-service-editor-style',
-		plugins_url( '/service-block/src/editor.css', dirname( __FILE__ ) ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __DIR__ ) . '/service-block/src/editor.css' )
-	);
-
-	// Front-end
-	wp_register_style(
-		'cgb-service-style',
-		plugins_url( '/service-block/src/style.css', dirname( __FILE__ ) ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __DIR__ ) . '/service-block/src/style.css' )
-	);
 
 	register_block_type(
 		'create-block/service-block',
 		array(
 			'editor_script' => 'cgb-service-script',
-			'editor_style'  => 'cgb-service-editor-style',
-			'style'         => 'cgb-service-style',
+			'editor_style'  => 'cgb-editor-style',
+			'style'         => 'cgb-style',
 		)
 	);
 }
-add_action( 'init', 'create_block_service_block_block_init' );
+add_action( 'init', 'create_block_service_block_init' );
