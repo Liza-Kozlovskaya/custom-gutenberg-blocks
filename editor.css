@@ -37,8 +37,22 @@
 .wp-block-create-block-service-block .image-button {
     text-align: center;
     margin: 15px 0 0;
+    border: 1px solid #0071a1;
+    background-color: #ffffff;
 }
 .wp-block-create-block-service-block .image-button {
     height: auto;
     padding: 0;
+}
+.wp-block-create-block-service-block p a {
+    background-color: #0d34be;
+    cursor: pointer;
+    padding: .5em 1em;
+    border: 1px solid transparent;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    margin-top: .5em;
+    text-decoration: none;
+    font-size: 13px;
 }

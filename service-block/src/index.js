@@ -34,6 +34,17 @@
 				attribute: 'src',
 			},
 		},
+		styles: [
+			{
+				name: "right",
+				label: __("Image Right"),
+				isDefault: true
+			},
+			{
+				name: "left",
+				label: __("Image Left")
+			},
+		],
 		edit: function( props ) {
 			let attributes = props.attributes;
 
@@ -83,23 +94,23 @@
 					},
 				} ),
 				el( MediaUpload, {
-						onSelect: onSelectImage,
-						allowedTypes: 'image',
-						value: attributes.mediaID,
-						render: function( obj ) {
-							return el(
-								components.Button,
-								{
-									className: attributes.mediaID
-										? 'image-button'
-										: 'button button-large',
-									onClick: obj.open,
-								},
-								! attributes.mediaID
-									? __( 'Upload/Manage Images', 'service-block' )
-									: el( 'img', { src: attributes.mediaURL } )
-							);
-						},
+					onSelect: onSelectImage,
+					allowedTypes: 'image',
+					value: attributes.mediaID,
+					render: function( obj ) {
+						return el(
+							components.Button,
+							{
+								className: attributes.mediaID
+									? 'image-button'
+									: 'button button-large',
+								onClick: obj.open,
+							},
+							! attributes.mediaID
+								? __( 'Upload/Manage Images', 'service-block' )
+								: el( 'img', { src: attributes.mediaURL } )
+						);
+					},
 				} ),
 			)
 		},
@@ -126,6 +137,10 @@
 						className: 'section-preview__text second-text',
 						value: attributes.description,
 					} ),
+					el(
+						'img',
+						{ src: attributes.mediaURL }
+					),
 				)
 			);
 		},
