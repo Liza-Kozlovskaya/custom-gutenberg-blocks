@@ -28,18 +28,17 @@
 }
 .wp-block-create-block-service-block h1 {
     font-size: 28px !important;
-    font-weight: 600 !important;
     margin: 5px 0 !important;
 }
 .wp-block-create-block-service-block p{
     font-size: 14px !important;
     margin: 0 !important;
 }
-.wp-block-create-block-service-block .recipe-image {
+.wp-block-create-block-service-block .image-button {
     text-align: center;
     margin: 15px 0 0;
 }
-.wp-block-create-block-service-block .recipe-image button {
+.wp-block-create-block-service-block .image-button {
     height: auto;
     padding: 0;
 }

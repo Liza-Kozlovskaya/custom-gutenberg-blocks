@@ -72,7 +72,7 @@
 				} ),
 				el( RichText, {
 					tagName: 'p',
-					inline: false,
+					inline: true,
 					placeholder: i18n.__(
 						'SENLA solutions will provide your business with significant advantages and help realize a unique business model in a competitive market.',
 						'service-block'
@@ -82,10 +82,7 @@
 						props.setAttributes( { description: value } );
 					},
 				} ),
-				el(
-					'div',
-					{ className: 'recipe-image' },
-					el( MediaUpload, {
+				el( MediaUpload, {
 						onSelect: onSelectImage,
 						allowedTypes: 'image',
 						value: attributes.mediaID,
@@ -103,9 +100,8 @@
 									: el( 'img', { src: attributes.mediaURL } )
 							);
 						},
-					} )
-				),
-			);
+				} ),
+			)
 		},
 		save: function( props ) {
 			let attributes = props.attributes;
@@ -114,7 +110,7 @@
 				'section', { className: 'section-preview section-preview--services' },
 				el(
 					'div',
-					{ className: 'section-preview__container section-preview__container--services container' },
+					{ className: 'section-preview__container section-preview__container--services container', style: { backgroundImage: `url(${ attributes.mediaURL })` } },
 					el( RichText.Content, {
 						tagName: 'h2',
 						value: attributes.title_h2,
@@ -130,12 +126,6 @@
 						className: 'section-preview__text second-text',
 						value: attributes.description,
 					} ),
-					attributes.mediaURL &&
-					el(
-						'div',
-						{ className: 'recipe-image' },
-						el( 'img', { src: attributes.mediaURL } )
-					),
 				)
 			);
 		},

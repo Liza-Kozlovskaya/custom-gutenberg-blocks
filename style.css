@@ -1,4 +1,12 @@
-.wp-block-create-block-slider-block .swiper-slide img {
-	width: 100%;
-}
+/*** SERVICE-BLOCK ***/
+.section-preview{background-color:#f8f8f8}
+.section-preview__container{min-height:550px;background-repeat:no-repeat;background-position:right}
+.sixth-heading{font-size:.6875rem;font-weight:700;line-height:20px;letter-spacing:1px;color:#1c1c1c}
+.first-heading{font-size:4rem;font-weight:700;line-height:80px;color:#1c1c1c}
+.second-text{font-size:18px;font-weight:400;line-height:32px;color:#1c1c1c}
+.section-preview__text{max-width:650px;margin-bottom:108px}
+.section-preview__heading-second{margin-bottom:56px}
+.section-preview__heading-first{max-width:650px;margin-bottom:108px;color:#979ea6;text-transform:uppercase}
 
+/*** SLIDER-BLOCK ***/
+.wp-block-create-block-slider-block .swiper-slide img{width:100%}
