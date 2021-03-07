@@ -1,0 +1,20 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-slider-block  {
+	background: #f4fbf8;
+	border: 1px solid #7b7b7b;
+	color: black;
+	margin: 0 auto;
+	max-width: 740px;
+	padding: 1.5rem;
+}
+.wp-block-create-block-slider-block .swiper-container{
+	margin-bottom: 1.5rem;
+}
+.wp-block-create-block-slider-block .slider-btn {
+	text-align: center;
+}
