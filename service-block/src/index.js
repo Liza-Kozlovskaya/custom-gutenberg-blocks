@@ -33,6 +33,15 @@
 				selector: 'img',
 				attribute: 'src',
 			},
+			btn_text: {
+				source: 'children',
+				selector: 'a',
+			},
+			btn_url: {
+				selector: 'a',
+				source: 'attribute',
+				attribute: 'href',
+			},
 		},
 		styles: [
 			{
@@ -68,6 +77,7 @@
 					onChange: function( value ) {
 						props.setAttributes( { title_h2: value } );
 					},
+					className: 'h2',
 				} ),
 				el( RichText, {
 					tagName: 'h1',
@@ -80,6 +90,7 @@
 					onChange: function( value ) {
 						props.setAttributes( { title_h1: value } );
 					},
+					className: 'h1',
 				} ),
 				el( RichText, {
 					tagName: 'p',
@@ -92,7 +103,38 @@
 					onChange: function( value ) {
 						props.setAttributes( { description: value } );
 					},
+					className: 'p',
 				} ),
+				el(
+					'div',
+					{ className: 'block-editor__contents-btn' },
+					el( RichText, {
+						tagName: 'p',
+						inline: true,
+						placeholder: __(
+							'Back to main',
+							'service-block'
+						),
+						value: attributes.btn_text,
+						onChange: function( value ) {
+							props.setAttributes( { btn_text: value } );
+						},
+						className: 'block-editor-button',
+					} ),
+					el( RichText, {
+						tagName: 'p',
+						inline: true,
+						placeholder: __(
+							'https://senlainc.com/',
+							'service-block'
+						),
+						value: attributes.btn_url,
+						onChange: function( value ) {
+							props.setAttributes( { btn_url: value } );
+						},
+						className: 'block-editor-link',
+					} )
+				),
 				el( MediaUpload, {
 					onSelect: onSelectImage,
 					allowedTypes: 'image',
@@ -122,25 +164,35 @@
 				el(
 					'div',
 					{ className: 'section-preview__container section-preview__container--services container', style: { backgroundImage: `url(${ attributes.mediaURL })` } },
-					el( RichText.Content, {
-						tagName: 'h2',
-						value: attributes.title_h2,
-						className: 'section-preview__heading-first sixth-heading',
-					} ),
-					el( RichText.Content, {
-						tagName: 'h1',
-						value: attributes.title_h1,
-						className: 'section-preview__heading-second first-heading'
-					} ),
-					el( RichText.Content, {
-						tagName: 'p',
-						className: 'section-preview__text second-text',
-						value: attributes.description,
-					} ),
 					el(
-						'img',
-						{ src: attributes.mediaURL }
-					),
+						'div',
+						{ className: 'section-preview__wrapper' },
+						el( RichText.Content, {
+							tagName: 'h2',
+							value: attributes.title_h2,
+							className: 'section-preview__heading-first sixth-heading',
+						} ),
+						el( RichText.Content, {
+							tagName: 'h1',
+							value: attributes.title_h1,
+							className: 'section-preview__heading-second first-heading'
+						} ),
+						el( RichText.Content, {
+							tagName: 'p',
+							className: 'section-preview__text second-text',
+							value: attributes.description,
+						} ),
+						el( RichText.Content, {
+							tagName: 'a',
+							href: attributes.btn_url,
+							value: attributes.btn_text,
+							className: 'section-preview__button button',
+						} ),
+						el(
+							'img',
+							{ src: attributes.mediaURL }
+						),
+					)
 				)
 			);
 		},
