@@ -41,7 +41,7 @@
 
 			return el(
 				'div',
-				{ className: props.className },
+				{ className: 'custom-block' },
 				el( RichText, {
 					tagName: 'h1',
 					inline: true,

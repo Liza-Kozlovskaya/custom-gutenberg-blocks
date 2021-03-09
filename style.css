@@ -43,3 +43,14 @@ section{padding: 108px 0}
 .error__title{margin:0;font-size:200px;line-height:80px;color:#fff}
 .error__text{padding-top:50px;margin-bottom:72px;color:#fff}
 .error__button{padding:12px 53px;width:14em}
+
+/*** DEVELOPMENT-BLOCK ***/
+.cycle-dev{padding-top:108px;padding-bottom:108px}
+.cycle-dev__wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.cycle-dev__title{width:20%;margin-top:20px}
+.cycle-dev__text-container{width:50%}
+.cycle-dev__info{margin-bottom:58px}
+.cycle-dev__list{margin:0;padding:0;list-style:none}
+.cycle-dev__list li{position:relative;padding-left:35px;margin-bottom:34px}
+.cycle-dev__text{width:15%;-webkit-transform:rotate(90deg);transform:rotate(90deg);color:#fff}
+.cycle-dev__text--black{-webkit-transform:rotate(90deg) translateX(100px);transform:rotate(90deg) translateX(100px);color:#1c1c1c}

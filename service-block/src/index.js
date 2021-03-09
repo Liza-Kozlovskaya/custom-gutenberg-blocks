@@ -65,7 +65,7 @@
 			};
 
 			return el(
-				'div', { className: props.className },
+				'div', { className: 'custom-block' },
 				el( RichText, {
 					tagName: 'h2',
 					inline: true,
@@ -95,7 +95,7 @@
 				el( RichText, {
 					tagName: 'p',
 					inline: true,
-					placeholder: i18n.__(
+					placeholder: __(
 						'SENLA solutions will provide your business with significant advantages and help realize a unique business model in a competitive market.',
 						'service-block'
 					),

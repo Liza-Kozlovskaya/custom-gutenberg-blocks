@@ -4,132 +4,124 @@
 	var RichText = editor.RichText;
 	var MediaUpload = editor.MediaUpload;
 
-	blocks.registerBlockType( 'create-block/error-block', {
-		title: __( '404 Block', 'service-block' ),
-		icon: 'index-card',
+	blocks.registerBlockType( 'create-block/development-block', {
+		title: __( 'Development Block', 'development-block' ),
+		icon: 'welcome-comments',
 		category: 'layout',
 		attributes: {
-			title: {
-				type: 'array',
-				source: 'children',
-				selector: 'h1',
+			title_h2: {
+				type: 'string',
+				selector: '.development-block-title-h2',
+			},
+			title_h1: {
+				type: 'string',
+				selector: '.development-block-title-h1',
 			},
 			description: {
-				type: 'array',
-				source: 'children',
-				selector: 'p',
+				type: 'string',
+				selector: '.development-block-description-p',
 			},
-			btn: {
+			list_services: {
 				type: 'array',
 				source: 'children',
-				selector: 'a',
+				selector: '.list_services',
 			},
 		},
 		edit: function( props ) {
 			var attributes = props.attributes;
 
-			var onSelectImage = function( media ) {
-				return props.setAttributes( {
-					mediaURL: media.url,
-					mediaID: media.id,
-				} );
-			};
-
 			return el(
 				'div',
-				{ className: props.className },
+				{ className: 'custom-block' },
 				el( RichText, {
 					tagName: 'h2',
 					inline: true,
 					placeholder: __(
-						'Write Recipe title…',
-						'service-block'
+						'— Interesting to read',
+						'development-block'
 					),
-					value: attributes.title,
+					value: attributes.title_h2,
 					onChange: function( value ) {
-						props.setAttributes( { title: value } );
+						props.setAttributes( { title_h2: value } );
 					},
+					className: 'h2',
 				} ),
-				el(
-					'div',
-					{ className: 'recipe-image' },
-					el( MediaUpload, {
-						onSelect: onSelectImage,
-						allowedTypes: 'image',
-						value: attributes.mediaID,
-						render: function( obj ) {
-							return el(
-								components.Button,
-								{
-									className: attributes.mediaID
-										? 'image-button'
-										: 'button button-large',
-									onClick: obj.open,
-								},
-								! attributes.mediaID
-									? __( 'Upload Image', 'service-block' )
-									: el( 'img', { src: attributes.mediaURL } )
-							);
-						},
-					} )
-				),
-				el( 'h3', {}, i18n.__( 'Ingredients', 'service-block' ) ),
+				el( RichText, {
+					tagName: 'h1',
+					inline: true,
+					placeholder: __(
+						'Full-cycle iOS app development services',
+						'development-block'
+					),
+					value: attributes.title_h1,
+					onChange: function( value ) {
+						props.setAttributes( { title_h1: value } );
+					},
+					className: 'h1',
+				} ),
+				el( RichText, {
+					tagName: 'p',
+					inline: true,
+					placeholder: __(
+						'Our experience goes beyond coding. SENLA is a full-cycle iOS development company, thus we can fully cover your requirements. We also provide the following services:',
+						'development-block'
+					),
+					value: attributes.description,
+					onChange: function( value ) {
+						props.setAttributes( { description: value } );
+					},
+					className: 'p',
+				} ),
 				el( RichText, {
 					tagName: 'ul',
 					multiline: 'li',
-					placeholder: i18n.__(
-						'Write a list of ingredients…',
-						'service-block'
+					placeholder: __(
+						'Fill in the list…',
+						'development-block'
 					),
-					value: attributes.ingredients,
+					value: attributes.list_services,
 					onChange: function( value ) {
-						props.setAttributes( { ingredients: value } );
+						props.setAttributes( { list_services: value } );
 					},
-					className: 'ingredients',
 				} ),
-				el( 'h3', {}, i18n.__( 'Instructions', 'service-block' ) ),
-				el( RichText, {
-					tagName: 'div',
-					inline: false,
-					placeholder: i18n.__(
-						'Write instructions…',
-						'service-block'
-					),
-					value: attributes.instructions,
-					onChange: function( value ) {
-						props.setAttributes( { instructions: value } );
-					},
-				} )
 			);
 		},
 		save: function( props ) {
 			var attributes = props.attributes;
 
 			return el(
-				'div',
-				{ className: props.className },
-				el( RichText.Content, {
-					tagName: 'h2',
-					value: attributes.title,
-				} ),
-				attributes.mediaURL &&
+				'section', { className: 'cycle-dev' },
 				el(
-					'div',
-					{ className: 'recipe-image' },
-					el( 'img', { src: attributes.mediaURL } )
-				),
-				el( 'h3', {}, i18n.__( 'Ingredients', 'service-block' ) ),
-				el( RichText.Content, {
-					tagName: 'ul',
-					className: 'ingredients',
-					value: attributes.ingredients,
-				} ),
-				el( 'h3', {}, i18n.__( 'Instructions', 'service-block' ) ),
-				el( RichText.Content, {
-					tagName: 'div',
-					className: 'steps',
-					value: attributes.instructions,
-				} )
+					'div', { className: 'container' },
+					el(
+						'div',
+						{ className: 'cycle-dev__wrapper' },
+						el( RichText.Content, {
+							tagName: 'h2',
+							value: attributes.title_h1,
+							className: 'cycle-dev__title second-heading'
+						} ),
+						el(
+							'div',
+							{ className: 'cycle-dev__text-container' },
+							el( RichText.Content, {
+								tagName: 'p',
+								value: attributes.description,
+								className: 'cycle-dev__info second-text',
+							} ),
+							el( RichText.Content, {
+								tagName: 'ul',
+								className: 'list_services cycle-dev__list',
+								value: attributes.list_services,
+							} ),
+						),
+						el( RichText.Content, {
+							tagName: 'p',
+							value: attributes.title_h2,
+							className: 'cycle-dev__text cycle-dev__text--black third-text',
+						} ),
+					)
+				)
 			);
 		},
 	} );

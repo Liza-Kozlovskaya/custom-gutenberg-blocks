@@ -49,7 +49,7 @@
 
 			return el(
 				'div',
-				{ className: props.className },
+				{ className: 'custom-block' },
 				el(
 					'div',
 					{ className: 'swiper-container' },
