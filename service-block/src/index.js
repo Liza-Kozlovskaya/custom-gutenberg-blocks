@@ -29,9 +29,6 @@
 			},
 			mediaURL: {
 				type: 'string',
-				source: 'attribute',
-				selector: 'img',
-				attribute: 'src',
 			},
 			btn_text: {
 				source: 'children',
@@ -62,6 +59,12 @@
 					mediaURL: media.url,
 					mediaID: media.id,
 				} );
+			};
+
+			let generateImage = function ( image ) {
+				if ( image !== undefined ) {
+					return el( 'img', { src: image, alt: 'Слайд' } );
+				}
 			};
 
 			return el(
@@ -135,35 +138,42 @@
 						className: 'block-editor-link',
 					} )
 				),
-				el( MediaUpload, {
-					onSelect: onSelectImage,
-					allowedTypes: 'image',
-					value: attributes.mediaID,
-					render: function( obj ) {
-						return el(
-							components.Button,
-							{
-								className: attributes.mediaID
-									? 'image-button'
-									: 'button button-large',
-								onClick: obj.open,
-							},
-							! attributes.mediaID
-								? __( 'Upload/Manage Images', 'service-block' )
-								: el( 'img', { src: attributes.mediaURL } )
-						);
-					},
-				} ),
+				el(
+					'div',
+					{className: 'block-editor-btn'},
+					generateImage( attributes.mediaURL ),
+					el( MediaUpload, {
+						onSelect: onSelectImage,
+						allowedTypes: 'image',
+						value: attributes.mediaID,
+						render: function( obj ) {
+							return el(
+								components.Button,
+								{
+									className: 'button button-large',
+									onClick: obj.open,
+								},
+								__( 'Upload/Manage Images', 'service-block' )
+							);
+						},
+					} ),
+				)
 			)
 		},
 		save: function( props ) {
-			let attributes = props.attributes;
+			const attributes = props.attributes;
+
+			const backgroundImage = {
+				backgroundImage: `url('${ attributes.mediaURL }')`
+			};
 
 			return el(
 				'section', { className: 'section-preview section-preview--services' },
 				el(
 					'div',
-					{ className: 'section-preview__container section-preview__container--services container', style: { backgroundImage: `url(${ attributes.mediaURL })` } },
+					{ className: 'section-preview__container section-preview__container--services container',
+						style: backgroundImage,
+					},
 					el(
 						'div',
 						{ className: 'section-preview__wrapper' },
@@ -188,10 +198,6 @@
 							value: attributes.btn_text,
 							className: 'section-preview__button button',
 						} ),
-						el(
-							'img',
-							{ src: attributes.mediaURL }
-						),
 					)
 				)
 			);

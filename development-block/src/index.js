@@ -2,7 +2,6 @@
 	var __ = i18n.__;
 	var el = element.createElement;
 	var RichText = editor.RichText;
-	var MediaUpload = editor.MediaUpload;
 
 	blocks.registerBlockType( 'create-block/development-block', {
 		title: __( 'Development Block', 'development-block' ),
