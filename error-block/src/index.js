@@ -32,13 +32,6 @@
 		edit: function( props ) {
 			var attributes = props.attributes;
 
-			var onSelectImage = function( media ) {
-				return props.setAttributes( {
-					mediaURL: media.url,
-					mediaID: media.id,
-				} );
-			};
-
 			return el(
 				'div',
 				{ className: 'custom-block' },
