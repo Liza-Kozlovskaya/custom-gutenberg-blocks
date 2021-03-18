@@ -30,15 +30,6 @@
 			mediaURL: {
 				type: 'string',
 			},
-			btn_text: {
-				source: 'children',
-				selector: 'a',
-			},
-			btn_url: {
-				selector: 'a',
-				source: 'attribute',
-				attribute: 'href',
-			},
 		},
 		styles: [
 			{
@@ -110,36 +101,6 @@
 				} ),
 				el(
 					'div',
-					{ className: 'block-editor__contents-btn' },
-					el( RichText, {
-						tagName: 'p',
-						inline: true,
-						placeholder: __(
-							'Back to main',
-							'service-block'
-						),
-						value: attributes.btn_text,
-						onChange: function( value ) {
-							props.setAttributes( { btn_text: value } );
-						},
-						className: 'block-editor-button',
-					} ),
-					el( RichText, {
-						tagName: 'p',
-						inline: true,
-						placeholder: __(
-							'https://senlainc.com/',
-							'service-block'
-						),
-						value: attributes.btn_url,
-						onChange: function( value ) {
-							props.setAttributes( { btn_url: value } );
-						},
-						className: 'block-editor-link',
-					} )
-				),
-				el(
-					'div',
 					{className: 'block-editor-btn'},
 					generateImage( attributes.mediaURL ),
 					el( MediaUpload, {
@@ -191,12 +152,6 @@
 							tagName: 'p',
 							className: 'section-preview__text second-text',
 							value: attributes.description,
-						} ),
-						el( RichText.Content, {
-							tagName: 'a',
-							href: attributes.btn_url,
-							value: attributes.btn_text,
-							className: 'section-preview__button button',
 						} ),
 					)
 				)

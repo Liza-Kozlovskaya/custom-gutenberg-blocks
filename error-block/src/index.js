@@ -97,31 +97,28 @@
 			var attributes = props.attributes;
 
 			return el(
-				'section', { className: 'error' },
+				'section', { className: 'error'},
 				el(
-					'div', { className: 'error__wrapper', style: { backgroundImage: `url(/wp-content/uploads/2021/03/error-bg.svg)` } },
+					'div', { className: 'error__grid container' },
 					el(
-						'div', { className: 'error__grid container' },
-						el(
-							'div',
-							{ className: 'error__container' },
-							el( RichText.Content, {
-								tagName: 'h1',
-								value: attributes.title,
-								className: 'error__title',
-							} ),
-							el( RichText.Content, {
-								tagName: 'p',
-								value: attributes.description,
-								className: 'error__text fourth-heading',
-							} ),
-							el( RichText.Content, {
-								tagName: 'a',
-								href: attributes.btn_url,
-								value: attributes.btn_text,
-								className: 'error__button button',
-							} ),
-						)
+						'div',
+						{ className: 'error__container' },
+						el( RichText.Content, {
+							tagName: 'h1',
+							value: attributes.title,
+							className: 'error__title',
+						} ),
+						el( RichText.Content, {
+							tagName: 'p',
+							value: attributes.description,
+							className: 'error__text fourth-heading',
+						} ),
+						el( RichText.Content, {
+							tagName: 'a',
+							href: attributes.btn_url,
+							value: attributes.btn_text,
+							className: 'error__button button',
+						} ),
 					)
 				)
 			);
