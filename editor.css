@@ -1,5 +1,7 @@
 .h1{font-size:28px!important;margin:5px 0!important}
 .h2{font-size:15px!important;margin:0!important}
+.h4{font-size: 13px!important;margin: 0 5px!important;}
+.h6{font-size: 9px!important;margin:0!important}
 .p{font-size: 14px!important;margin: 0!important}
 .custom-block{background:#f4fbf8;border:1px solid #7b7b7b;color:#000;margin:0 auto;max-width:740px;padding:1.5rem}
 .block-editor-button{background-color:#0d34be;cursor:pointer;padding:.5em 1em;border:1px solid transparent;font-weight:700;color:#fff;display:inline-block;margin:0!important;text-decoration:none;font-size:13px!important}
@@ -16,3 +18,8 @@
 /*** ERROR-BLOCK  ***/
 .block-editor__contents-btn{margin: 1em 0;text-align: center}
 .block-editor__contents-btn p{display:inline-block}
+
+/*** CASE STUDIES BLOCK ***/
+.cases__card-row{display:flex;flex-wrap:wrap}
+.cases__card{width:48.5%;margin:5px;background-color:#e2efe9;padding:10px;border:1px solid #c7c7c7}
+.cases__sixth-heading{display:flex;flex-wrap:wrap;align-items:center;margin:5px -5px 0}

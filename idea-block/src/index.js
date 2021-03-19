@@ -2,7 +2,6 @@
 	const __ = i18n.__;
 	const el = element.createElement;
 	const RichText = editor.RichText;
-	const MediaUpload = editor.MediaUpload;
 
 	blocks.registerBlockType( 'create-block/idea-block', {
 		title: __( 'Idea Block', 'idea-block' ),
@@ -23,11 +22,11 @@
 			},
 			btn_text: {
 				source: 'children',
-				selector: 'idea__button_text',
+				selector: 'a',
 			},
 			btn_url: {
+				selector: 'a',
 				source: 'attribute',
-				selector: 'idea__button_link',
 				attribute: 'href',
 			},
 

@@ -23,6 +23,7 @@ require_once plugin_dir_path( __FILE__ ) . 'slider-block/slider-block.php';
 require_once plugin_dir_path( __FILE__ ) . 'error-block/error-block.php';
 require_once plugin_dir_path( __FILE__ ) . 'development-block/development-block.php';
 require_once plugin_dir_path( __FILE__ ) . 'idea-block/idea-block.php';
+require_once plugin_dir_path( __FILE__ ) . 'case-studies-block/case-studies-block.php';
 
 
 // Back-end
