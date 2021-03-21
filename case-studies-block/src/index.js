@@ -4,75 +4,62 @@
 	const RichText = editor.RichText;
 
 	blocks.registerBlockType( 'create-block/case-studies-block', {
-		title: __( 'Related case studies Block', 'gutenberg-examples' ),
+		title: __( 'Related case studies Block', 'case-studies-block' ),
 		icon: 'format-gallery',
 		category: 'media',
 		attributes: {
 			main_title: {
-				type: 'array',
-				source: 'children',
+				type: 'string',
 				selector: 'h2.cases__heading',
 			},
 			card1_card_text: {
 				type: 'string',
-				source: 'children',
-				selector: 'cases__card-text',
+				selector: 'p.cases__card-text',
 			},
 			card1_card_title: {
 				type: 'string',
-				source: 'html',
 				selector: 'h3.cases__sixth-heading',
 			},
 			card1_card_subtitle: {
 				type: 'string',
-				source: 'html',
 				selector: 'h3.cases__sixth-heading',
 			},
-			/*card2_card_text: {
+			card2_card_text: {
 				type: 'string',
-				source: 'children',
-				selector: 'cases__card-text',
+				selector: 'p.cases__card-text',
 			},
 			card2_card_title: {
 				type: 'string',
-				source: 'children',
-				selector: 'cases__sixth-heading',
+				selector: 'h3.cases__sixth-heading',
 			},
 			card2_card_subtitle: {
 				type: 'string',
-				source: 'children',
-				selector: 'cases__sixth-heading',
+				selector: 'h3.cases__sixth-heading',
 			},
 			card3_card_text: {
 				type: 'string',
-				source: 'children',
-				selector: 'cases__card-text',
+				selector: 'p.cases__card-text',
 			},
 			card3_card_title: {
 				type: 'string',
-				source: 'children',
-				selector: 'cases__sixth-heading',
+				selector: 'h3.cases__sixth-heading',
 			},
 			card3_card_subtitle: {
 				type: 'string',
-				source: 'children',
-				selector: 'cases__sixth-heading',
+				selector: 'h3.cases__sixth-heading',
 			},
 			card4_card_text: {
 				type: 'string',
-				source: 'children',
-				selector: 'cases__card-text',
+				selector: 'p.cases__card-text',
 			},
 			card4_card_title: {
 				type: 'string',
-				source: 'children',
-				selector: 'cases__sixth-heading',
+				selector: 'h3.cases__sixth-heading',
 			},
 			card4_card_subtitle: {
 				type: 'string',
-				source: 'children',
-				selector: 'cases__sixth-heading',
-			},*/
+				selector: 'h3.cases__sixth-heading',
+			},
 		},
 		edit: function( props ) {
 			const attributes = props.attributes;
@@ -145,7 +132,7 @@
 							} ),
 						)
 					),
-					/*el(
+					el(
 						'div',
 						{ className: 'cases__card' },
 						el( 'p', { className: 'h6' }, __( '02', 'case-studies-block' ) ),
@@ -291,12 +278,29 @@
 								className: 'h4'
 							} ),
 						)
-					)*/
+					)
 				)
 			);
 		},
 		save: function( props ) {
 			const attributes = props.attributes;
+
+			const check_subtitle = function (subtitle, title){
+				let vertical_bar = el( 'span', {}, __( '|', 'case-studies-block' ) );
+
+				if(subtitle === undefined){
+					return el(
+						'h3', {className: 'cases__sixth-heading sixth-heading'},
+						[title]
+					)
+				}
+				else{
+					return el(
+						'h3', {className: 'cases__sixth-heading sixth-heading'},
+						[title, vertical_bar, subtitle]
+					)
+				}
+			}
 
 			return el(
 				'section', { className: 'cases'},
@@ -319,23 +323,9 @@
 									value: attributes.card1_card_text,
 									className: 'cases__card-text fourth-heading',
 								} ),
-								el(
-									'h3',
-									{ className: 'cases__sixth-heading sixth-heading'},
-									el( RichText.Content, {
-										tagName: 'p',
-										value: attributes.card1_card_title,
-										className: 'cases__card-text fourth-heading',
-									} ),
-									el('span', {}, __( '|', 'gutenberg-examples' )),
-									el( RichText.Content, {
-										tagName: 'p',
-										value: attributes.card1_card_subtitle,
-										className: 'cases__card-text fourth-heading',
-									} )
-								)
+								check_subtitle(attributes.card1_card_subtitle, attributes.card1_card_title)
 							),
-							/*el(
+							el(
 								'div', { className: 'cases__card cases__card--second' },
 								el( 'p', { className: 'cases__card-number cases__card-number--white sixth-heading' }, __( '02', 'case-studies-block' ) ),
 								el( RichText.Content, {
@@ -364,7 +354,7 @@
 									className: 'cases__card-text fourth-heading',
 								} ),
 								check_subtitle(attributes.card4_card_subtitle, attributes.card4_card_title)
-							),*/
+							),
 						)
 					)
 				)
