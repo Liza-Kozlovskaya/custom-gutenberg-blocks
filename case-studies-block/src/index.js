@@ -285,18 +285,18 @@
 		save: function( props ) {
 			const attributes = props.attributes;
 
-			const check_subtitle = function (subtitle, title){
-				let vertical_bar = el( 'span', {}, __( '|', 'case-studies-block' ) );
+			const check_subtitle = function (subtitle, title, classes){
+				let vertical_bar = el( 'span', { className: 'cases__dash'}, __( '|', 'case-studies-block' ) );
 
 				if(subtitle === undefined){
 					return el(
-						'h3', {className: 'cases__sixth-heading sixth-heading'},
+						'h3', {className: classes},
 						[title]
 					)
 				}
 				else{
 					return el(
-						'h3', {className: 'cases__sixth-heading sixth-heading'},
+						'h3', {className: classes},
 						[title, vertical_bar, subtitle]
 					)
 				}
@@ -323,7 +323,7 @@
 									value: attributes.card1_card_text,
 									className: 'cases__card-text fourth-heading',
 								} ),
-								check_subtitle(attributes.card1_card_subtitle, attributes.card1_card_title)
+								check_subtitle(attributes.card1_card_subtitle, attributes.card1_card_title, 'cases__sixth-heading sixth-heading')
 							),
 							el(
 								'div', { className: 'cases__card cases__card--second' },
@@ -333,7 +333,7 @@
 									value: attributes.card2_card_text,
 									className: 'cases__card-text cases__card-text--white fourth-heading',
 								} ),
-								check_subtitle(attributes.card2_card_subtitle, attributes.card2_card_title)
+								check_subtitle(attributes.card2_card_subtitle, attributes.card2_card_title, 'cases__sixth-heading cases__card-heading--white sixth-heading')
 							),
 							el(
 								'div', { className: 'cases__card cases__card--third' },
@@ -343,7 +343,7 @@
 									value: attributes.card3_card_text,
 									className: 'cases__card-text fourth-heading',
 								} ),
-								check_subtitle(attributes.card3_card_subtitle, attributes.card3_card_title)
+								check_subtitle(attributes.card3_card_subtitle, attributes.card3_card_title, 'cases__sixth-heading sixth-heading')
 							),
 							el(
 								'div', { className: 'cases__card cases__card--fourth' },
@@ -353,7 +353,7 @@
 									value: attributes.card4_card_text,
 									className: 'cases__card-text fourth-heading',
 								} ),
-								check_subtitle(attributes.card4_card_subtitle, attributes.card4_card_title)
+								check_subtitle(attributes.card4_card_subtitle, attributes.card4_card_title, 'cases__sixth-heading sixth-heading')
 							),
 						)
 					)
