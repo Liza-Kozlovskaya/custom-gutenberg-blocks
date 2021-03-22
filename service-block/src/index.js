@@ -7,7 +7,7 @@
 	blocks.registerBlockType( 'create-block/service-block', {
 		title: __( 'Service Block', 'service-block' ),
 		icon: 'align-pull-right',
-		category: 'media',
+		category: 'senla-blocks',
 		attributes: {
 			title_h2: {
 				type: 'array',

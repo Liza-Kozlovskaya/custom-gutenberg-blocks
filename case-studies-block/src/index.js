@@ -6,7 +6,7 @@
 	blocks.registerBlockType( 'create-block/case-studies-block', {
 		title: __( 'Related case studies Block', 'case-studies-block' ),
 		icon: 'format-gallery',
-		category: 'media',
+		category: 'senla-blocks',
 		attributes: {
 			main_title: {
 				type: 'string',

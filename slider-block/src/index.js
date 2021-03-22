@@ -7,7 +7,7 @@
 	blocks.registerBlockType( 'create-block/slider-block', {
 		title: __( 'Slider Block', 'slider-block' ),
 		icon: 'align-wide',
-		category: 'media',
+		category: 'senla-blocks',
 		attributes: {
 			images: {
 				type: 'array',

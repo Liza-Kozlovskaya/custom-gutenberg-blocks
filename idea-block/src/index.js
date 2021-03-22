@@ -5,8 +5,8 @@
 
 	blocks.registerBlockType( 'create-block/idea-block', {
 		title: __( 'Idea Block', 'idea-block' ),
-		icon: 'align-pull-right',
-		category: 'media',
+		icon: 'thumbs-up',
+		category: 'senla-blocks',
 		attributes: {
 			title_section: {
 				type: 'string',

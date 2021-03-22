@@ -5,8 +5,8 @@
 
 	blocks.registerBlockType( 'gutenberg-examples/start-project-block', {
 		title: __( 'Start project Block', 'start-project-block' ),
-		icon: 'universal-access-alt',
-		category: 'layout',
+		icon: 'external',
+		category: 'senla-blocks',
 		attributes: {
 			btn_url: {
 				selector: 'a',

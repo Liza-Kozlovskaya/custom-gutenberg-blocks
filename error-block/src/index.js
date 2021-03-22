@@ -7,7 +7,7 @@
 	blocks.registerBlockType( 'create-block/error-block', {
 		title: __( '404 Block', 'service-block' ),
 		icon: 'welcome-comments',
-		category: 'layout',
+		category: 'senla-blocks',
 		attributes: {
 			title: {
 				type: 'array',

@@ -5,8 +5,8 @@
 
 	blocks.registerBlockType( 'create-block/development-block', {
 		title: __( 'Development Block', 'development-block' ),
-		icon: 'welcome-comments',
-		category: 'layout',
+		icon: 'list-view',
+		category: 'senla-blocks',
 		attributes: {
 			title_h2: {
 				type: 'string',

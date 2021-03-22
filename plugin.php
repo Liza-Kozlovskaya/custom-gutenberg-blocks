@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Custom Gutenberg blocks 2
+ * Plugin Name: Custom Gutenberg blocks
  * Author: Elizaveta Kozlovskaya
  * Author URI: https://www.linkedin.com/in/elizaveta-kozlovskaya-86b0b01a3/
  * Version: 1.0.0
@@ -25,6 +25,7 @@ require_once plugin_dir_path( __FILE__ ) . 'development-block/development-block.
 require_once plugin_dir_path( __FILE__ ) . 'idea-block/idea-block.php';
 require_once plugin_dir_path( __FILE__ ) . 'case-studies-block/case-studies-block.php';
 require_once plugin_dir_path( __FILE__ ) . 'start-project-block/start-project-block.php';
+require_once plugin_dir_path( __FILE__ ) . 'services-tabs-block/services-tabs-block.php';
 
 
 // Back-end
