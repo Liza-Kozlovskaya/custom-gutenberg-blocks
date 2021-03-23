@@ -1,9 +1,3 @@
-/* global esversion: 6 */
-
-//  Import CSS.
-import './style.scss';
-import './editor.scss';
-
 export const { registerBlockType } = wp.blocks
 export const { __ } = wp.i18n
 export const { TextControl } = wp.components
@@ -27,10 +21,9 @@ export const edit = ( props ) => {
     } = props.attributes
     
     return [
-        <div>
-        <h2>{ __('Content tab ' + (parseInt(tabid) + 1)) }</h2>
+        <div className={'tabs__item'}>
+        <p className={'tabs__item-title'}>{ __('Content tab ' + (parseInt(tabid) + 1)) }</p>
             <InnerBlocks templateLock={false} />
-        <hr />
         </div>
     ];
 }
@@ -55,56 +48,17 @@ export const save = ( props ) => {
     );
 }
 
-registerBlockType( 'madeit/block-tabs-content', {
+registerBlockType( 'create-block/block-tabs-content', {
     title: __( 'Tab content' ),
-    icon: 'editor-kitchensink',
+    icon: 'welcome-write-blog',
     category: 'common',
-    parent: ['gutenberg-examples/services-tabs-block'],
-    keywords: [],
+    parent: ['create-block/block-tabs-contents'],
 
     attributes: {
         tabid: {
             type: 'number'
         },
     },
-    
     edit: edit,
-    
     save: save,
-    
-    deprecated: [
-        {
-            attributes: {
-                tabid: {
-                    type: 'string'
-                },
-            },
-
-            migrate: function( attributes ) {
-                return {
-                    tabid: parseInt(attributes.tabid),
-                };
-            },
-
-            save: function( props ) {
-                var tabid = props.attributes.tabid;
-    
-                const {
-                    className
-                } = props
-
-                var classN = className !== undefined ? className : '';
-                classN += tabid == 0 ? ' show active' : '';
-
-                return (
-                    <div className={ 'tab-pane fade ' + classN }
-                    role="tabpanel"
-                    id={tabid}
-                    aria-labelledby={ tabid + '-tab'}>
-                        <InnerBlocks.Content />
-                    </div>
-                );
-            },
-        },
-    ]
 } )

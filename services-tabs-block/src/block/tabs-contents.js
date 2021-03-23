@@ -1,9 +1,3 @@
-/* global esversion: 6 */
-
-//  Import CSS.
-import './style.scss';
-import './editor.scss';
-
 export const { registerBlockType } = wp.blocks
 export const { __ } = wp.i18n
 export const { TextControl } = wp.components
@@ -15,7 +9,7 @@ export const {
     InnerBlocks
 } = wp.editor
 
-export const ALLOWED_BLOCKS = [ 'madeit/block-tabs-content' ];
+export const ALLOWED_BLOCKS = [ 'create-block/block-tabs-content' ];
 
 export const edit = ( props ) => {
     const {
@@ -25,7 +19,7 @@ export const edit = ( props ) => {
     } = props
 
     const {
-        aantaltabs
+        blocktabs
     } = props.attributes
     
     return [
@@ -39,7 +33,7 @@ export const edit = ( props ) => {
 
 export const save = ( props ) => {
     const {
-        aantaltabs,
+        blocktabs,
     } = props.attributes;
     
     const {
@@ -55,56 +49,18 @@ export const save = ( props ) => {
     );
 }
 
-registerBlockType( 'madeit/block-tabs-contents', {
+registerBlockType( 'create-block/block-tabs-contents', {
     title: __( 'Tab content list' ),
     icon: 'editor-kitchensink',
     category: 'common',
-    parent: ['madeit/block-tabs'],
-    keywords: [],
+    parent: ['create-block/block-tabs'],
 
     attributes: {
-        aantaltabs: {
+        blocktabs: {
             type: 'number',
-            default: 3,
+            default: 1,
         },
     },
-
     edit: edit,
-
     save: save,
-    
-    deprecated: [
-        {
-            attributes: {
-                aantaltabs: {
-                    type: 'number',
-                    default: '3',
-                },
-            },
-
-            migrate: function( attributes ) {
-                return {
-                    aantaltabs: parseInt(attributes.aantaltabs)
-                };
-            },
-
-            save: function( props ) {
-                const {
-                    aantaltabs,
-                } = props.attributes;
-
-                const {
-                    className
-                } = props;
-
-                var classN = className !== undefined ? className : '';
-
-                return (
-                    <div className={ 'tab-content ' + classN }>
-                        <InnerBlocks.Content />
-                    </div>
-                );
-            },
-        }
-    ]
 } )

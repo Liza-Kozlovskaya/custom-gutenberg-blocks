@@ -1,52 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94463cae-76d1-4bae-bc80-87841f18257c" name="Default Changelist" comment="Created &quot;Start project&quot; block">
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/block.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/build/index.asset.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/build/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/build/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/build/style-index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/services-tabs-block.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/src/block/editor.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/src/block/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-content.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-contents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-title.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-titles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/src/block/tabs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services-tabs-block/src/index.js" afterDir="false" />
+    <list default="true" id="94463cae-76d1-4bae-bc80-87841f18257c" name="Default Changelist" comment="Started build &quot;Service Tabs&quot; block">
+      <change afterPath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-content-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-content-title.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case-studies-block/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case-studies-block/build/index.asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/case-studies-block/build/index.asset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case-studies-block/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/case-studies-block/build/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case-studies-block/readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case-studies-block/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/case-studies-block/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development-block/build/index.asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/development-block/build/index.asset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development-block/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/development-block/build/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development-block/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/development-block/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor.css" beforeDir="false" afterPath="$PROJECT_DIR$/editor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error-block/build/index.asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/error-block/build/index.asset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error-block/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/error-block/build/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error-block/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/error-block/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idea-block/build/index.asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/idea-block/build/index.asset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idea-block/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/idea-block/build/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idea-block/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/idea-block/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-block/build/index.asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/service-block/build/index.asset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-block/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-block/build/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-block/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-block/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slider-block/build/index.asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/slider-block/build/index.asset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slider-block/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/slider-block/build/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slider-block/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/slider-block/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start-project-block/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/start-project-block/build/index.asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/start-project-block/build/index.asset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start-project-block/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/start-project-block/build/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start-project-block/readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/start-project-block/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/start-project-block/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services-tabs-block/build/index.asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/services-tabs-block/build/index.asset.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services-tabs-block/build/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services-tabs-block/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/services-tabs-block/build/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services-tabs-block/build/style-index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services-tabs-block/src/block/editor.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services-tabs-block/src/block/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-content.js" beforeDir="false" afterPath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-contents.js" beforeDir="false" afterPath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-contents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-title.js" beforeDir="false" afterPath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-title.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-titles.js" beforeDir="false" afterPath="$PROJECT_DIR$/services-tabs-block/src/block/tabs-titles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services-tabs-block/src/block/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/services-tabs-block/src/block/tabs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services-tabs-block/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/services-tabs-block/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +72,8 @@
       <workItem from="1616077311846" duration="2621000" />
       <workItem from="1616134879337" duration="12306000" />
       <workItem from="1616153688746" duration="10944000" />
-      <workItem from="1616393728005" duration="18331000" />
+      <workItem from="1616393728005" duration="18760000" />
+      <workItem from="1616479639517" duration="8990000" />
     </task>
     <task id="LOCAL-00001" summary="Created Inner block, fixed bags in Error block">
       <created>1616080811728</created>
@@ -131,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616404716163</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Started build &quot;Service Tabs&quot; block">
+      <created>1616421539608</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616421539608</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +134,7 @@
     <MESSAGE value="Removed node_modules in Idea block" />
     <MESSAGE value="Created the basis for &quot;Case studies&quot; block" />
     <MESSAGE value="Created &quot;Start project&quot; block" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created &quot;Start project&quot; block" />
+    <MESSAGE value="Started build &quot;Service Tabs&quot; block" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started build &quot;Service Tabs&quot; block" />
   </component>
 </project>

@@ -1,9 +1,3 @@
-/* global esversion: 6 */
-
-//  Import CSS.
-import './style.scss';
-import './editor.scss';
-
 import memoize from 'memize';
 import { times, merge } from 'lodash';
 
@@ -18,12 +12,12 @@ export const {
     RichText,
 } = wp.editor
 
-export const ALLOWED_BLOCKS = [ 'madeit/block-tabs-title', 'madeit/block-tabs-content' ];
+export const ALLOWED_BLOCKS = [ 'create-block/block-tabs-title', 'create-block/block-tabs-content' ];
 
 export const getTabsTemplate = memoize( ( tabs ) => {
     var content = [
-        ['madeit/block-tabs-titles', {aantaltabs: tabs}, times( tabs, (i) => [ 'madeit/block-tabs-title', {tabid: i} ] ) ],
-        ['madeit/block-tabs-contents', {aantaltabs: tabs}, times( tabs, (i) => [ 'madeit/block-tabs-content', {tabid: i} ] ) ],
+        ['create-block/block-tabs-titles', {blocktabs: tabs}, times( tabs, (i) => [ 'create-block/block-tabs-title', {tabid: i} ] ) ],
+        ['create-block/block-tabs-contents', {blocktabs: tabs}, times( tabs, (i) => [ 'create-block/block-tabs-content', {tabid: i} ] ) ],
     ];
     return content;
 } );
@@ -39,7 +33,7 @@ export const edit = ( props ) => {
     } = props
 
     const {
-        aantaltabs
+        blocktabs
     } = props.attributes
     
     const { replaceInnerBlocks } = useDispatch("core/block-editor");
@@ -49,24 +43,24 @@ export const edit = ( props ) => {
     let innerBlocks = inner_blocks;
 
     return [
-        <div>
+        <div className={'custom-block'}>
             <wp.editor.InnerBlocks
-                    template={ getTabsTemplate( aantaltabs ) }
+                    template={ getTabsTemplate( blocktabs ) }
                     templateLock="all"
                     allowedBlocks={ ALLOWED_BLOCKS } />
             {
                 isSelected &&
                 <InspectorControls key='inspector'>
                     <TextControl
-                        label={ __( 'Aantal tabs' ) }
-                        value={ aantaltabs }
+                        label={ __( 'Count of tabs' ) }
+                        value={ blocktabs }
                         type='number'
                         onChange={ ( value ) => {
                             let countNewTabs = parseInt(value);
-                            setAttributes( { aantaltabs: countNewTabs } );
+                            setAttributes( { blocktabs: countNewTabs } );
     
                             innerBlocks.forEach((i) => {
-                                i.attributes.aantaltabs = countNewTabs;
+                                i.attributes.blocktabs = countNewTabs;
                                 let iInnerBlocks = i.innerBlocks;
                                 
                                 replaceInnerBlocks(i.clientId, iInnerBlocks, false);
@@ -81,7 +75,7 @@ export const edit = ( props ) => {
 
 export const save = ( props ) => {
     const {
-        aantaltabs,
+        blocktabs,
     } = props.attributes;
     
     const {
@@ -95,60 +89,17 @@ export const save = ( props ) => {
     );
 }
 
-registerBlockType( 'madeit/block-tabs', {
-    // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-    title: __( 'Tabs - Made IT Block' ), // Block title.
-    icon: 'editor-kitchensink', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-    category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
-    keywords: [
-        __( 'tabs' ),
-        __( 'Made IT' ),
-        __( 'Made I.T.' ),
-    ],
+registerBlockType( 'create-block/block-tabs', {
+    title: __( 'Services Tabs Block' ),
+    icon: 'editor-kitchensink',
+    category: 'senla-blocks',
 
     attributes: {
-        aantaltabs: {
+        blocktabs: {
             type: 'number',
-            default: 3,
+            default: 1,
         },
     },
-
-    // The "edit" property must be a valid function.
     edit: edit,
-
-    // The "save" property must be  valid function.
     save: save,
-    
-    /*deprecated: [
-        {
-            attributes: {
-                aantaltabs: {
-                    type: 'number',
-                    default: '3',
-                },
-            },
-
-            migrate: function( attributes ) {
-                return {
-                    aantaltabs: parseInt(attributes.aantaltabs)
-                };
-            },
-
-            save: function( props ) {
-                const {
-                    aantaltabs,
-                } = props.attributes;
-
-                const {
-                    className
-                } = props
-
-                return (
-                    <div className={ className }>
-                        <wp.editor.InnerBlocks.Content />
-                    </div>
-                );
-            },
-        }
-    ]*/
 } )

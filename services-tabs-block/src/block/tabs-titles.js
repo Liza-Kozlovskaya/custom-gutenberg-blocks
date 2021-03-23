@@ -1,9 +1,3 @@
-/* global esversion: 6 */
-
-//  Import CSS.
-import './style.scss';
-import './editor.scss';
-
 export const { registerBlockType } = wp.blocks
 export const { __ } = wp.i18n
 export const { TextControl } = wp.components
@@ -14,7 +8,7 @@ export const {
     RichText,
 } = wp.editor
 
-export const ALLOWED_BLOCKS = [ 'madeit/block-tabs-title' ];
+export const ALLOWED_BLOCKS = [ 'create-block/block-tabs-title' ];
 
 export const edit = ( props ) => {
     const {
@@ -24,7 +18,7 @@ export const edit = ( props ) => {
     } = props
 
     const {
-        aantaltabs
+        blocktabs
     } = props.attributes
     
     return [
@@ -38,7 +32,7 @@ export const edit = ( props ) => {
 
 export const save = ( props ) => {
     const {
-        aantaltabs,
+        blocktabs,
     } = props.attributes;
     
     const {
@@ -54,17 +48,17 @@ export const save = ( props ) => {
     );
 }
 
-registerBlockType( 'madeit/block-tabs-titles', {
+registerBlockType( 'create-block/block-tabs-titles', {
     title: __( 'Tab title list' ),
     icon: 'editor-kitchensink',
     category: 'common',
-    parent: ['madeit/block-tabs'],
+    parent: ['create-block/block-tabs'],
     keywords: [],
 
     attributes: {
-        aantaltabs: {
+        blocktabs: {
             type: 'number',
-            default: 3,
+            default: 1,
         },
     },
     
@@ -73,43 +67,6 @@ registerBlockType( 'madeit/block-tabs-titles', {
             'data-tab-titles': 'true',
         };
     },
-    
     edit: edit,
-    
     save: save,
-    
-    deprecated: [
-        {
-            attributes: {
-                aantaltabs: {
-                    type: 'number',
-                    default: '3',
-                },
-            },
-
-            migrate: function( attributes ) {
-                return {
-                    aantaltabs: parseInt(attributes.aantaltabs)
-                };
-            },
-
-            save: function( props ) {
-                const {
-                    aantaltabs,
-                } = props.attributes;
-
-                const {
-                    className
-                } = props
-
-                return (
-                    <div className={ className }>
-                        <ul class="nav nav-tabs" role="tablist">
-                            <wp.editor.InnerBlocks.Content />
-                        </ul>
-                    </div>
-                );
-            },
-        }
-    ]
 } )
